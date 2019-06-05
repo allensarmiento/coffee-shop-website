@@ -8,3 +8,6 @@ This project implements a coffee shop website. Users can log in, sign up, order 
 
 ## Authors
 * Allen Sarmiento
+
+## Reference
+
