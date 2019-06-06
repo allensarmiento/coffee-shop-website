@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
-    <!-- Header Navbar -->
-    <nav class="navbar navbar-expand-md navbar-light" style="background: #bda34e">
-      <img src="http://www.rainbowlogos.com/wp-content/uploads/2016/05/1-5-800x600.jpg" width="90" height="70" class="d-inline-block align-top" alt="">
+    <!-- =================== Header Navbar ====================== -->
+    <nav class="navbar navbar-expand-md navbar-light" style="background: rgba(196, 210, 215, 0.694);">
+      <img src="http://www.rainbowlogos.com/wp-content/uploads/2016/05/1-5-800x600.jpg" width="115" height="100" class="d-inline-block align-top" alt="">
       
       <!-- Hamburger mode if needed-->
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -51,41 +51,129 @@
       </div>
     </nav>
 
-    <!-- Jumbotron - Display images -->
-    <div class="jumbotron">
-      <h1 class="display-1">Hello, world!</h1>
-      <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-      <hr class="my-4">
-      <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-      <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+    <!-- ==================== Carousel - Display Images =================== -->
+      <div class="bd-example">
+        <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+          <ol class="carousel-indicators">
+            <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+            <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+          </ol>
+          <div class="carousel-inner">
+            <div class="carousel-item active" style="height: 100vh;">
+              <img src="https://dailycoffeenews.com/wp-content/uploads/2018/10/coffee-801781_1280.jpg" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block mb-5">
+                <h1>Our Belief</h1>
+                <h3>We want to achieve the highest grade of coffee we can</h3>
+              </div>
+            </div>
+            <div class="carousel-item" style="height: 100vh;">
+              <img src="https://cdn-a.william-reed.com/var/wrbm_gb_food_pharma/storage/images/publications/food-beverage-nutrition/beveragedaily.com/news/markets/us-coffee-shop-market-grows-to-45.4bn-valuation-in-2018/8803729-1-eng-GB/US-coffee-shop-market-grows-to-45.4bn-valuation-in-2018_wrbm_large.jpg" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block mb-5">
+                <h1>Coffee On The Go</h1>
+                <h3>Multiple flavors to choose from. Create your own art!</h3>
+              </div>
+            </div>
+            <div class="carousel-item" style="height: 100vh;">
+              <img src="https://media.timeout.com/images/103891878/630/472/image.jpg" class="d-block w-100" alt="...">
+              <div class="carousel-caption d-none d-md-block mb-5">
+                <h1>Join Us</h1>
+                <h3>Relax and have a cup of coffee in our store</h3>
+              </div>
+            </div>
+          </div>
+          <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+
+    <!-- ==================== Locations ===================== -->
+    <div class="container">
+      <hr>
+      <h1 style="text-align: center;">Find A Store Near You!</h1>
+      <div class="row ml-auto mr-auto">
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Location 1</h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Location 2</h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Location 3</h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
     </div>
-
-    <!-- Images, rotate between different images -->
-    <section>
-
-    </section>
-
-    <!-- Locations -->
-    <section id='locations'>
-      <h1>Find A Store Near You</h1>
-      <div class='store'>
-        <img src='' alt=''> <!-- Store image -->
-        <h3>Store 1</h3>
-      </div>
-      <div class='store'>
-        <img src='' alt=''> <!-- Store image -->
-        <h3>Store 2</h3>
-      </div>
-      <div class='store'>
-        <img src='' alt=''> <!-- Store image -->
-        <h3>Store 3</h3>
-      </div>
-    </section>
 
     <!-- Sample items, or can have a menu showing recent combinations -->
     <section id='sample-items'>
       
     </section>
+
+    <div class="container">
+      <h1 style="text-align: center">What We Offer</h1>
+
+      <div class="row">
+        <div class="col-md-3 col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <hr>
+    </div>
 
     <!-- Footer -->
     <section id='footer'>
