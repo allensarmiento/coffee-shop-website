@@ -6,42 +6,48 @@ html, body {
 /* ========= Header =========== */
 #header {
   width: 100%;
-  height: 80px;
+  height: 70px;
   background: rgba(228, 217, 217, 0.899);
 }
 
 /* Image logo on far left side */
-.left {
-  float: left;
-  height: 100%;
-  width: 125px;
-}
-
 .middle, .right {
   list-style-type: none;
 }
 
+.left {
+  height: 100%;
+  float: left;
+  width: 120px;
+  margin-right: 5%;
+}
+
 .middle {
   float: left;
-  margin-left: auto;
-  margin-right: auto;
+  max-width: 450px;
 }
 
 .right {
   float: right;
-  margin-right: 25px;
+  max-width: 300px;
 }
 
 .middle li, .right li {
   background: rgba(120, 92, 1, 0.639);
   border-radius: 10px;
   float: left;
-  margin-left: 25px;
-  padding: 15px;
+  margin: 0 5px;
+  padding: 10px;
   text-align: center;
 }
 
 .middle li a, .right li a {
   color: #000000;
   text-decoration: none;
+}
+
+@media only screen and (max-width: 770px) {
+  #header {
+    display: none;  
+  }
 }
