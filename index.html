@@ -3,14 +3,14 @@
   <head>
     <meta charset='utf-8'>
     <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no'>
-    <!-- <link rel='stylesheet' style='text/css' href='./styles/master.css'> -->
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel='stylesheet' style="text/css" href='./styles/master.css'>
   </head>
-  <body>
+  <body class="bg-light">
     <!-- =================== Header Navbar ====================== -->
-    <nav class="navbar navbar-expand-md navbar-light" style="background: rgba(196, 210, 215, 0.694);">
-      <img src="http://www.rainbowlogos.com/wp-content/uploads/2016/05/1-5-800x600.jpg" width="115" height="100" class="d-inline-block align-top" alt="">
+    <nav class="navbar navbar-expand-md navbar-light">
+      <img src="http://www.rainbowlogos.com/wp-content/uploads/2016/05/1-5-800x600.jpg" width="100" height="75" class="d-inline-block align-top" alt="">
       
       <!-- Hamburger mode if needed-->
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,6 +19,7 @@
 
       <!-- Navbar buttons -->
       <div class="collapse navbar-collapse" id="navbarText">
+        <!-- Centered Navbar -->
         <ul class="navbar-nav ml-auto mr-auto">
           <li class="nav-item active">
             <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
@@ -36,7 +37,7 @@
             <a class="nav-link" href="#">Join Us</a>
           </li>
         </ul>
-
+        <!-- Right Aligned Navbar -->
         <ul class='navbar-nav mr'>
           <li class='nav-item'>
             <a class='nav-link' href='#'>Cart</a>
@@ -60,28 +61,32 @@
             <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
           </ol>
           <div class="carousel-inner">
-            <div class="carousel-item active" style="height: 100vh;">
+            <!-- Carousel Item 1-->
+            <div class="carousel-item active">
               <img src="https://dailycoffeenews.com/wp-content/uploads/2018/10/coffee-801781_1280.jpg" class="d-block w-100" alt="...">
               <div class="carousel-caption d-none d-md-block mb-5">
-                <h1>Our Belief</h1>
+                <h1>Our Mission</h1>
                 <h3>We want to achieve the highest grade of coffee we can</h3>
               </div>
             </div>
-            <div class="carousel-item" style="height: 100vh;">
+            <!-- Carousel Item 2-->
+            <div class="carousel-item">
               <img src="https://cdn-a.william-reed.com/var/wrbm_gb_food_pharma/storage/images/publications/food-beverage-nutrition/beveragedaily.com/news/markets/us-coffee-shop-market-grows-to-45.4bn-valuation-in-2018/8803729-1-eng-GB/US-coffee-shop-market-grows-to-45.4bn-valuation-in-2018_wrbm_large.jpg" class="d-block w-100" alt="...">
               <div class="carousel-caption d-none d-md-block mb-5">
                 <h1>Coffee On The Go</h1>
                 <h3>Multiple flavors to choose from. Create your own art!</h3>
               </div>
             </div>
-            <div class="carousel-item" style="height: 100vh;">
+            <!-- Carousel Item 3-->
+            <div class="carousel-item">
               <img src="https://media.timeout.com/images/103891878/630/472/image.jpg" class="d-block w-100" alt="...">
               <div class="carousel-caption d-none d-md-block mb-5">
-                <h1>Join Us</h1>
+                <h1>Visit Us</h1>
                 <h3>Relax and have a cup of coffee in our store</h3>
               </div>
             </div>
           </div>
+          <!-- Buttons to go previous or next -->
           <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
             <span class="sr-only">Previous</span>
@@ -95,33 +100,36 @@
 
     <!-- ==================== Locations ===================== -->
     <div class="container">
-      <hr>
-      <h1 style="text-align: center;">Find A Store Near You!</h1>
-      <div class="row ml-auto mr-auto">
+      <!-- Title -->
+      <h1 class="section my-5">Find A Store Near You!</h1>
+      <div class="row ml-auto mr-auto mb-5">
+        <!-- Location 1 -->
         <div class="col-md-4">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Location 1</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <h5 class="card-title">San Francisco</h5>
+              <p class="card-text"></p>
+              <a href="#" class="btn btn-primary">View this location</a>
             </div>
           </div>
         </div>
+        <!-- Location 2 -->
         <div class="col-md-4">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Location 2</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <h5 class="card-title">Los Angeles</h5>
+              <p class="card-text"></p>
+              <a href="#" class="btn btn-primary">View this location</a>
             </div>
           </div>
         </div>
+        <!-- Location 3 -->
         <div class="col-md-4">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Location 3</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-              <a href="#" class="btn btn-primary">Go somewhere</a>
+              <h5 class="card-title">New York City</h5>
+              <p class="card-text"></p>
+              <a href="#" class="btn btn-primary">View this location</a>
             </div>
           </div>
         </div>
@@ -129,44 +137,47 @@
       <hr>
     </div>
 
-    <!-- Sample items, or can have a menu showing recent combinations -->
-    <section id='sample-items'>
-      
-    </section>
-
+    <!-- ============== Sample items, or can have a menu showing recent combinations =========== -->
     <div class="container">
-      <h1 style="text-align: center">What We Offer</h1>
-
-      <div class="row">
+      <h1 class="section my-5"">Customer Favorites</h1>
+      <div class="row mb-5">
+        <!-- Card 1 -->
         <div class="col-md-3 col-sm-6">
           <div class="card">
+            <img src="https://www.thespruceeats.com/thmb/lya8YrpVKkJSnqIPc2LVKA1FIqs=/450x0/filters:no_upscale():max_bytes(150000):strip_icc()/145634220-56a32bc95f9b58b7d0d0b9f9.jpg" class="card-img-top" alt="">
             <div class="card-body">
-              <h5 class="card-title">Special title treatment</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <h5 class="card-title">Cafe au lait</h5>
+              <p class="card-text">Strong coffee made with scalded milk in a 1:1 ratio.</p>
             </div>
           </div>
         </div>
+        <!-- Card 2 -->
         <div class="col-md-3 col-sm-6">
           <div class="card">
+              <img src="https://thumbs.dreamstime.com/t/caramella-gommosa-e-molle-nel-caff%C3%A8-67489250.jpg" class="card-img-top" alt="">
             <div class="card-body">
-              <h5 class="card-title">Special title treatment</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <h5 class="card-title">Caffee Gommosa</h5>
+              <p class="card-text">An espresso poured over a single marshmallow.</p>
             </div>
           </div>
         </div>
+        <!-- Card 3 -->
         <div class="col-md-3 col-sm-6">
           <div class="card">
+            <img src="https://www.nespresso.com/ncp/res/uploads/recipes/nespresso-recipes-Espresso-Macchiato.jpg" class="card-img-top" alt="">
             <div class="card-body">
-              <h5 class="card-title">Special title treatment</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <h5 class="card-title">Macchiato</h5>
+              <p class="card-text">An espresso made with a small amount of foamed milk.</p>
             </div>
           </div>
         </div>
+        <!-- Card 4 -->
         <div class="col-md-3 col-sm-6">
           <div class="card">
+            <img src="data:image/jpeg;base64,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" class="card-img-top" alt="">
             <div class="card-body">
-              <h5 class="card-title">Special title treatment</h5>
-              <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+              <h5 class="card-title">Espresso</h5>
+              <p class="card-text">A brew method and coffee that is ground and packed.</p>
             </div>
           </div>
         </div>
@@ -175,27 +186,42 @@
       <hr>
     </div>
 
-    <!-- Footer -->
-    <section id='footer'>
-      <h2>Subscribe to our newsletter to get the latest updates!</h2>
-      <input type='email'>
-      <button type='submit'>Sign Me Up</button>
-
-      <ul>
-        <li>Customer Service</li>
-        <li>Terms & Policy</li>
-        <li>Contact Us</li>
-      </ul>
-
-      <h2>Follow Us At</h2>
-      <ul>
-        <!-- Social Media Icons -->
-        <li><a><img src='' alt=''></a></li>
-        <li><a><img src='' alt=''></a></li>
-        <li><a><img src='' alt=''></a></li>
-        <li><a><img src='' alt=''></a></li>
-      </ul>
-    </section>
+    <!-- =================== Footer ================= -->
+    <div class="footer p-5 mb-5 my-5">
+      <div class="container">
+        <div class="row">
+          <!-- Mailing list -->
+          <div class="col-md-8">
+            <div class="card">
+              <div class="card-body">
+                <h3 class="uppercase card-title">Subscribe to our newsletter to get the latest updates!</h3>
+                <p class="card-text">
+                  <div class="input-group mb-3">
+                    <input type="text" class="form-control" placeholder="Enter your email..." aria-label="Enter your email..." aria-describedby="basic-addon2">
+                    <div class="input-group-append">
+                      <button type="button" class="btn btn-warning">Sign up</button>
+                    </div>
+                  </div>
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Social Media -->
+          <div class="col-md-4">
+            <div class="card">
+              <div class="card-body text-center">
+                <h3 class="card-title">Follow Us At</h3>
+                <div class="social-media">
+                  <a class="card-text" href="#">Facebook</a>
+                  <a class="card-text" href="#">Instagram</a>
+                  <a class="card-text" href="#">Twitter</a>
+                </div>
+              </div>  
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
