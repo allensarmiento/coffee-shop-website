@@ -5,6 +5,12 @@ This project implements a coffee shop website. Users can log in, sign up and ord
 * CSS, HTML, JavaScript, Bootstrap 4
 * Express
 
+## How to execute:
+In project directory execute the following:
+```
+node app.js
+```
+
 ## Challenges
 
 ## Things to fix:
