@@ -12,6 +12,10 @@ app.get("/shop", function(req, res) {
   res.render("shop");
 });
 
+app.get("/stores", function(req, res) {
+  res.render("stores");
+});
+
 // Listening on localhost
 app.listen(8000, function() {
   console.log("Server is listening!!");
