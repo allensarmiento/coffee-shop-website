@@ -16,6 +16,10 @@ app.get("/stores", function(req, res) {
   res.render("stores");
 });
 
+app.get("/story", function(req, res) {
+  res.render("story");
+});
+
 // Listening on localhost
 app.listen(8000, function() {
   console.log("Server is listening!!");
