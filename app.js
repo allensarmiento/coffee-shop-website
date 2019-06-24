@@ -20,6 +20,10 @@ app.get("/story", function(req, res) {
   res.render("story");
 });
 
+app.get("/joinUs", function(req, res) {
+  res.render("joinUs");
+});
+
 app.get("/account", function(req, res) {
   res.render("account");
 });
