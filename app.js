@@ -8,11 +8,13 @@ app.get("/", function(req, res) {
   res.render("home");
 });
 
+// ============ TODO: Data for Shop ===============
 app.get("/shop", function(req, res) {
   res.render("shop");
 });
+// ================================================
 
-// ============= Stores =================
+// ============= Stores ===========================
 var stores = [
   {city: "San Francisco", street: "Golden Gate", bgImage: "https://images.unsplash.com/photo-1487132906645-8e0fbba067e0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80"},
   {city: "San Francisco", street: "Mission District", bgImage: "https://images.unsplash.com/photo-1439396087961-98bc12c21176?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1780&q=80"},
@@ -31,6 +33,7 @@ var stores = [
 app.get("/stores", function(req, res) {
   res.render("stores", {stores:  stores});
 });
+// ================================================
 
 app.get("/story", function(req, res) {
   res.render("story");
