@@ -9,6 +9,19 @@ app.get("/", function(req, res) {
 });
 
 // ============ TODO: Data for Shop ===============
+var items = [
+  {blend: "Dark", name: "Dark Expresso", price: "$0.00", image: "https://cdn.shopify.com/s/files/1/0002/1115/7052/products/brazil1_dkroast_400.jpg?v=1549596309"},
+  {blend: "Dark", name: "Haitian", price: "$0.00", image: "https://www.holybeanscafe.com/holybeanscafe/wp-content/uploads/2015/11/dark-roast-coffee.jpg"},
+  {blend: "Dark", name: "Paris", price: "0.00", image: "http://cdn.shopify.com/s/files/1/2217/5179/products/frc-french-roast-roasted-coffee-beans_grande.jpg?v=1505296912"},
+  {blend: "Dark", name: "Mocha Java", price: "0.00", image: "https://sep.yimg.com/ay/yhst-133788258843600/mocha-java-organic-coffee-beans-41.gif"},
+  
+  {blend: "Medium", name: "", price: "", image: ""},
+  {blend: "", name: "", price: "", image: ""},
+  {blend: "", name: "", price: "", image: ""},
+  {blend: "", name: "", price: "", image: ""},
+  {blend: "", name: "", price: "", image: ""},
+];
+
 app.get("/shop", function(req, res) {
   res.render("shop");
 });
