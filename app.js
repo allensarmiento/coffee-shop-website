@@ -15,10 +15,11 @@ var items = [
   {blend: "Dark", name: "Paris", price: "0.00", image: "http://cdn.shopify.com/s/files/1/2217/5179/products/frc-french-roast-roasted-coffee-beans_grande.jpg?v=1505296912"},
   {blend: "Dark", name: "Mocha Java", price: "0.00", image: "https://sep.yimg.com/ay/yhst-133788258843600/mocha-java-organic-coffee-beans-41.gif"},
   
-  {blend: "Medium", name: "", price: "", image: ""},
-  {blend: "", name: "", price: "", image: ""},
-  {blend: "", name: "", price: "", image: ""},
-  {blend: "", name: "", price: "", image: ""},
+  {blend: "Medium", name: "Medium Expresso", price: "0.00", image: "https://www.coffeebeandirect.com/media/catalog/product/cache/1/image/0dc6da5b2fe15547a809e30525508fd7/m/e/medium-roast-espresso-wide.jpg"},
+  {blend: "Medium", name: "Coffee Club", price: "0.00", image: "https://static1.squarespace.com/static/59d9113c90bade192af3e3a0/t/5a2dc13b53450ab787d59f99/1512948028366/food-beans-coffee-drink.jpg"},
+  {blend: "Medium", name: "Colombia", price: "0.00", image: "http://www.topratedcoffeebeans.com/wp-content/uploads/2014/11/Vienna-roast-beans-300x300.png"},
+  
+  {blend: "Light", name: "", price: "", image: ""},
   {blend: "", name: "", price: "", image: ""},
 ];
 
