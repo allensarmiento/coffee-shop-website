@@ -3,12 +3,13 @@ var express = require("express"),
     mongoose = require("mongoose"),
     bodyParser = require("body-parser");
 
-mongoose.connect("mongodb://localhost:27017/Coffee_Shop",  {useNewUrlParser: true});
+var url = process.env.DATABASEURL || "mongodb://localhost:27017/Coffee_Shop";
+mongoose.connect(url,  {useNewUrlParser: true});
 mongoose.connection.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs"); // Expect ejs files
-app.use(express.static("public")); // Public folder for css styles
+app.use(express.static(__dirname + "/public")); // Public folder for css styles
 
 // NOTE: Mongoose by default add an S, so to prevent looking for Shops, specify to look for Shop as the 3rd parameter.
 var shopSchema = new mongoose.Schema({
