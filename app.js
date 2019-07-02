@@ -10,6 +10,7 @@ var express               = require("express"),
 
 var url = process.env.DATABASEURL || "mongodb://localhost:27017/Coffee_Shop";
 mongoose.connect(url,  {useNewUrlParser: true});
+mongoose.set('useCreateIndex', true);
 mongoose.connection.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
 app.use(require("express-session")({
@@ -106,13 +107,25 @@ app.post("/account/signUp", function(req, res) {
 // LOGIN ROUTES
 // ==============
 
-app.post("account/login", passport.authenticate("local", {
+// middleware
+app.post("/login", passport.authenticate("local", {
   successRedirect: "/",
   failureRedirect: "/account"
 }), function(req, res) {
-
 });
 
+// log user out
+app.get("/logout", function(req, res) {
+  req.logout();
+  res.redirect("/");
+});
+
+function isLoggedIn(req, res, next) {
+  if (req.isAuthenticated()) {
+    return next();
+  }
+  res.redirect("/account");
+}
 
 // Listening on localhost
 app.listen(8000, function() {

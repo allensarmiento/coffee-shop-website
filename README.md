@@ -27,3 +27,5 @@ node app.js
 ## Things to fix:
 - Text in homepage slider bar gets off place as the window size gets smaller [Done] 
 - When going to new page, the navigation highlight needs to be changed to appropriate page [Done]
+- Update username when logged in 
+- Possibly fix the account/signUp route to /signUp
