@@ -30,7 +30,7 @@ var Stores = mongoose.model("Stores", storeSchema, "Stores");
 //    ROUTES
 // ============
 app.get("/", function(req, res) {
-  res.render("home", {page: "home"});
+  res.render("home");
 });
 
 app.get("/shop", function(req, res) {

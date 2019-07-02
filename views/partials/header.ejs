@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel='stylesheet' type="text/css" href="/master.css">
   </head>
+
   <body class="bg-light">
     <!-- =================== Header Navbar ====================== -->
     <nav class="navbar navbar-expand-md navbar-light">
@@ -22,7 +23,7 @@
       <div class="collapse navbar-collapse" id="navbarText">
         <!-- Centered Navbar -->
         <ul class="navbar-nav ml-auto mr-auto">
-          <li id="homeNav" class="nav-item active">
+          <li id="homeNav" class="nav-item ">
             <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
           </li>
           <li id="shopNav" class="nav-item">
@@ -45,11 +46,29 @@
             <a class='nav-link border-right' href='/'><span><img src="./images/shopping-cart-solid.svg" style="width: 15px;"></span> Cart</a>
           </li>
           <li class='nav-item'>
-            <a class='nav-link border-right' href="./account"><span><img src="./images/user-solid.svg" style="width: 15px;"></span> Account</a>
+            <a id="accountNav" class='nav-link border-right' href="./account"><span><img src="./images/user-solid.svg" style="width: 15px;"></span> Account</a>
           </li>
           <li class='nav-item'>
             <a class='nav-link' href='/'><span><img src="./images/info-circle-solid.svg" style="width: 15px;"></span> Help</a>
           </li>
         </ul>
       </div>
+
+      <script>
+          url = window.location.href;
+    
+          if (url.search("shop") >= 0) {
+            document.getElementById("shopNav").classList.add("active");
+          } else if (url.search("stores") >= 0) {
+            document.getElementById("storesNav").classList.add("active");
+          } else if (url.search("story") >= 0) {
+            document.getElementById("storyNav").classList.add("active");
+          } else if (url.search("joinUs") >= 0) {
+            document.getElementById("joinUsNav").classList.add("active");
+          } else if (url.search("account") >= 0) {
+            document.getElementById("accountNav").classList.add("active");
+          } else {
+            document.getElementById("homeNav").classList.add("active");
+          }
+        </script>
     </nav>
