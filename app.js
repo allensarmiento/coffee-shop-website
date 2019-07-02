@@ -1,7 +1,11 @@
-var express = require("express"),
-    app = express(),
-    mongoose = require("mongoose"),
-    bodyParser = require("body-parser");
+var express               = require("express"),
+    app                   = express(),
+    mongoose              = require("mongoose"),
+    bodyParser            = require("body-parser"),
+
+    passport              = require("passport"),
+    LocalStrategy         = require("passport-local"),
+    passportLocalMongoose = require("passport-local-mongoose");
 
 var url = process.env.DATABASEURL || "mongodb://localhost:27017/Coffee_Shop";
 mongoose.connect(url,  {useNewUrlParser: true});
