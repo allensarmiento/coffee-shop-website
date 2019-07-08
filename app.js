@@ -6,7 +6,10 @@ var express               = require("express"),
     passport              = require("passport"),
     User                  = require("./models/user"),
     LocalStrategy         = require("passport-local"),
-    passportLocalMongoose = require("passport-local-mongoose");
+    passportLocalMongoose = require("passport-local-mongoose"),
+
+    Shop                  = require("./models/shop"),
+    Stores                = require("./models/stores");
 
 var url = process.env.DATABASEURL || "mongodb://localhost:27017/Coffee_Shop";
 mongoose.connect(url,  {useNewUrlParser: true});
@@ -27,22 +30,6 @@ app.use(passport.session());
 passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
-
-// NOTE: Mongoose by default add an S, so to prevent looking for Shops, specify to look for Shop as the 3rd parameter.
-var shopSchema = new mongoose.Schema({
-  blend: String,
-  name: String,
-  price: String,
-  image: String
-});
-var Shop = mongoose.model("Shop", shopSchema, "Shop"); 
-
-var storeSchema = new mongoose.Schema({
-  city: String,
-  street: String, 
-  bgImage: String
-});
-var Stores = mongoose.model("Stores", storeSchema, "Stores");
 
 // ============
 //    ROUTES
