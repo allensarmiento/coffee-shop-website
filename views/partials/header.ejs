@@ -45,9 +45,18 @@
           <li class='nav-item'>
             <a class='nav-link border-right' href='/'><span><img src="./images/shopping-cart-solid.svg" style="width: 15px;"></span> Cart</a>
           </li>
-          <li class='nav-item'>
-            <a id="accountNav" class='nav-link border-right' href="./account"><span><img src="./images/user-solid.svg" style="width: 15px;"></span> Account</a>
-          </li>
+          <% if (!currentUser) { %> 
+            <li class='nav-item'>
+              <a id="accountNav" class='nav-link border-right' href="/account"><span><img src="./images/user-solid.svg" style="width: 15px;"></span> Account</a>
+            </li>
+          <% } else { %>
+            <li class="nav-item">
+              <span id="accountNav" class="nav-link border-right">
+                <img src="./images/user-solid.svg" style="width: 15px;"><%= currentUser.username %>
+                <a href="/logout">(Sign out)</a>
+              </span>
+            </li>
+          <% } %>
           <li class='nav-item'>
             <a class='nav-link' href='/'><span><img src="./images/info-circle-solid.svg" style="width: 15px;"></span> Help</a>
           </li>
