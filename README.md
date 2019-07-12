@@ -6,18 +6,23 @@ This project implements a coffee shop website. Users can log in, sign up and ord
 * Node.js, Express, MongoDB, Mongoose
 
 ## How to execute:
-1. Create a mongo database
-2. Run the database server and create a Coffee Shop database
+1. Start mongo server
+```
+sudo service mongod start
+```
+2. Open up a mongo shell to view database
+3. Create a mongo database
+4. Run the database server and create a Coffee Shop database
 ```
 mongo
 use Coffee_Shop
 ```
-3. Add all items from db_items folder
-4. Add all npm dependencies
+5. Add all items from db_items folder
+6. Add all npm dependencies
 ```
 npm install
 ```
-5. While server is running and in project directory execute the following:
+7. While server is running and in project directory execute the following:
 ```
 node app.js
 ```
