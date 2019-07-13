@@ -31,7 +31,7 @@
                   <h5 class="card-title text-left"><%= item.name %></h5>
                   <p class="card-text m-0"><%= item.blend %></p>
                   <p class="card-text">Price: $<%= item.price %></p>
-                  <button type="button" class="btn btn-warning">Add to Cart</button>
+                  <button type="button" class="btn btn-warning" onclick="addToCart(<% item.name %>);">Add to Cart</button>
                 </div>
               </div>
             </div>
