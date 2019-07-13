@@ -43,7 +43,12 @@
         <!-- Right Aligned Navbar -->
         <ul class='navbar-nav mr' style="font-size: 14px;">
           <li class='nav-item'>
-            <a class='nav-link border-right' href='/'><span><img src="./images/shopping-cart-solid.svg" style="width: 15px;"></span> Cart</a>
+            <a class='nav-link border-right' href='/cart'>
+              <span>
+                <img src="./images/shopping-cart-solid.svg" style="width: 15px;">
+                <span id="cart-number" class="badge badge-warning"></span>
+              </span> Cart
+            </a>
           </li>
           <% if (!currentUser) { %> 
             <li class='nav-item'>

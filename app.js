@@ -10,7 +10,8 @@ var express               = require("express"),
 
     Shop                  = require("./models/shop"),
     Stores                = require("./models/stores");
-  
+
+// ROUTES
 var indexRoutes = require("./routes/index"),
     authRoutes  = require("./routes/auth");
 

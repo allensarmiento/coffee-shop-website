@@ -35,4 +35,8 @@ router.get("/joinUs", function(req, res) {
   res.render("joinUs");
 });
 
+router.get("/cart", function(req ,res) {
+  res.render("cart");
+});
+
 module.exports = router;
