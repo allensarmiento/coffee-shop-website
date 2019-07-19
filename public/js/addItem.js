@@ -35,6 +35,7 @@ function updateCartItems() {
   }
 }
 
+// DEBUGGING PURPOSES
 function clearCart() {
   sessionStorage.clear();
 }

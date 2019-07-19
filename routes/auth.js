@@ -17,12 +17,13 @@ router.get("/account", function(req, res) {
 router.post("/account/signUp", function(req, res) {
   User.register(new User({username: req.body.username}), req.body.password, function(err, user) {
     if (err) {
-      console.log(err);
-      return res.render("account");
+      req.flash("error", err.message);
+      return res.redirect("back");
     } 
     // logs the user in and stores user information using the local strategy
     // NOTE: If I'm not using a username and using an email, is there an email strategy?
     passport.authenticate("local")(req, res, function() {
+      req.flash("success", "Welcome to CoffeeFix " + user.username);
       res.redirect("/");
     });
   });
@@ -35,13 +36,16 @@ router.post("/account/signUp", function(req, res) {
 // middleware
 router.post("/login", passport.authenticate("local", {
   successRedirect: "/",
-  failureRedirect: "/account"
+  failureRedirect: "/account",
+  failureFlash: true
 }), function(req, res) {
+  
 });
 
 // log user out
 router.get("/logout", function(req, res) {
   req.logout();
+  req.flash("success", "Logged out");
   res.redirect("/");
 });
 
