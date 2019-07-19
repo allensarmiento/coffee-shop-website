@@ -1,36 +1,41 @@
 <% include partials/header %>
 
-<div class="container">
-  <h1>Your Shopping Cart</h1>
-  <div class="card mb-3" style="max-width: 540px;">
-    <div class="row no-gutters">
-      <div class="col-md-4">
-        <img src="..." class="card-img" alt="...">
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-        </div>
-      </div>
-    </div>
-  </div>
+<script>
+  // On window load, print which items are added to the cart 
+  window.onload = function() {
+    if (sessionStorage.length === 0) {
+      console.log("No items");
+    }
+    for (let i=0, len=sessionStorage.length; i<len; i++) {
+      let key = sessionStorage.key(i);
+      let value = JSON.parse(sessionStorage[key]);
 
-  <div class="card mb-3" style="max-width: 540px;">
-    <div class="row no-gutters">
-      <div class="col-md-4">
-        <img src="..." class="card-img" alt="...">
-      </div>
-      <div class="col-md-8">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-          <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-        </div>
-      </div>
-    </div>
-  </div>
+      new_card = 
+      '<div class="card mb-3" style="max-width: 540px;">\
+        <div class="row no-gutters">\
+          <div class="col-md-4">\
+            <img src="' + value.image + '" class="card-img" alt="...">\
+          </div>\
+          <div class="col-md-8">\
+            <div class="card-body">\
+              <h5 class="card-title">' + key + '</h5>\
+              <p class="card-text">Quantity: ' + value.quantity + '</p>\
+              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>\
+            </div>\
+          </div>\
+        </div>\
+      </div>';
+
+      document.getElementById("cart").innerHTML += new_card;
+    }
+
+    // Update the cart item number
+    updateCartItems();
+  }
+</script>
+
+<div id="cart" class="container">
+  <h1>Your Shopping Cart</h1>  
 </div>
 
 <% include partials/footer %>
