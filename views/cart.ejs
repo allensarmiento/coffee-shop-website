@@ -4,7 +4,8 @@
   // On window load, print which items are added to the cart 
   window.onload = function() {
     if (sessionStorage.length === 0) {
-      console.log("No items");
+      document.getElementById("cart").innerHTML += 
+      '<div class="m-5">Your cart is empty</div>'
     }
     for (let i=0, len=sessionStorage.length; i<len; i++) {
       let key = sessionStorage.key(i);
@@ -19,8 +20,8 @@
           <div class="col-md-8">\
             <div class="card-body">\
               <h5 class="card-title">' + key + '</h5>\
-              <p class="card-text">Quantity: ' + value.quantity + '</p>\
-              <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>\
+              <p class="card-text my-0">Quantity: ' + value.quantity + '</p>\
+              <button class="btn btn-sm btn-danger" onclick="removeItem(\'' + key + '\');">Remove</button>\
             </div>\
           </div>\
         </div>\

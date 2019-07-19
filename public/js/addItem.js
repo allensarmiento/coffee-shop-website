@@ -35,6 +35,16 @@ function updateCartItems() {
   }
 }
 
+function removeItem(key) {
+  console.log(key);
+  if (sessionStorage.getItem(key)) {
+    sessionStorage.removeItem(key);
+    location.reload();
+  }
+
+  updateCartItems();
+}
+
 // DEBUGGING PURPOSES
 function clearCart() {
   sessionStorage.clear();
