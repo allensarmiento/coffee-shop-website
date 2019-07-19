@@ -34,7 +34,7 @@ node app.js
 - Possibly fix the account/signUp route to /signUp 
 
 ## Things to add:
-- Work on updating the cart, storage the information needed to update the cart page
+- Work on updating the cart, storage the information needed to update the cart page [Done]
 - Keep a running total of most purchased items, possibly calculating through invoices
 - Create customer invoices to view purchase history
 - Create admin accounts and cms 
