@@ -1,11 +1,13 @@
 var express               = require("express"),
     app                   = express(),
     mongoose              = require("mongoose"),
+    flash                 = require("connect-flash"),
     bodyParser            = require("body-parser"),
 
     passport              = require("passport"),
     User                  = require("./models/user"),
     LocalStrategy         = require("passport-local"),
+    methodOverride        = require("method-override"),
     passportLocalMongoose = require("passport-local-mongoose"),
 
     Shop                  = require("./models/shop"),
@@ -23,6 +25,8 @@ mongoose.connection.on('error', console.error.bind(console, 'MongoDB connection 
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs"); // Expect ejs files
 app.use(express.static(__dirname + "/public")); // Public folder for css styles
+app.use(methodOverride("_method"));
+app.use(flash());
 
 // PASSPORT CONFIGURATION
 app.use(require("express-session")({
@@ -39,6 +43,8 @@ passport.deserializeUser(User.deserializeUser());
 // Middleware to be used on all pages to tell if user is logged in or not.
 app.use(function(req, res, next) {
   res.locals.currentUser =  req.user;
+  res.locals.error = req.flash("error");
+  res.locals.success = req.flash("success");
   next();
 });
 
