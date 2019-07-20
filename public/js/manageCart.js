@@ -37,34 +37,6 @@ function loadCartItems() {
   }
 }
 
-function updateActiveNavbar() {
-  url = window.location.href;
-  let active_class = "";
-  if (url.search("shop") >= 0) {
-    document.getElementById("shopNav").classList.add("active");
-    active_class = "shopNav";
-  } else if (url.search("stores") >= 0) {
-    document.getElementById("storesNav").classList.add("active");
-    active_class="storesNav"; 
-  } else if (url.search("story") >= 0) {
-    document.getElementById("storyNav").classList.add("active");
-    active_class="storyNav";
-  } else if (url.search("joinUs") >= 0) {
-    document.getElementById("joinUsNav").classList.add("active");
-    active_class="joinUsNav";
-  } else if (url.search("account") >= 0) {
-    document.getElementById("accountNav").classList.add("active");
-    active_class="accountNav";
-  } else if (url.search("cart") >= 0) {
-    document.getElementById("cartNav").classList.add("active");
-    active_class="cartNav";
-  } else {
-    document.getElementById("homeNav").classList.add("active");
-    active_class="homeNav";
-  }
-  return active_class;
-}
-
 // Add item to cart
 function addToCart(itemName, itemImage) {
   if (sessionStorage.getItem(itemName)) {
@@ -106,6 +78,40 @@ function removeItem(key) {
   }
 
   updateCartItems();
+}
+
+// TODO: This needs to be an ajax request
+function checkout() {
+  
+}
+
+// Update Navbar
+function updateActiveNavbar() {
+  url = window.location.href;
+  let active_class = "";
+  if (url.search("shop") >= 0) {
+    document.getElementById("shopNav").classList.add("active");
+    active_class = "shopNav";
+  } else if (url.search("stores") >= 0) {
+    document.getElementById("storesNav").classList.add("active");
+    active_class="storesNav"; 
+  } else if (url.search("story") >= 0) {
+    document.getElementById("storyNav").classList.add("active");
+    active_class="storyNav";
+  } else if (url.search("joinUs") >= 0) {
+    document.getElementById("joinUsNav").classList.add("active");
+    active_class="joinUsNav";
+  } else if (url.search("account") >= 0) {
+    document.getElementById("accountNav").classList.add("active");
+    active_class="accountNav";
+  } else if (url.search("cart") >= 0) {
+    document.getElementById("cartNav").classList.add("active");
+    active_class="cartNav";
+  } else {
+    document.getElementById("homeNav").classList.add("active");
+    active_class="homeNav";
+  }
+  return active_class;
 }
 
 // DEBUGGING PURPOSES
