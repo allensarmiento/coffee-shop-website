@@ -11,7 +11,7 @@
 
   <body class="bg-light">
     <!-- =================== Header Navbar ====================== -->
-    <nav class="navbar navbar-expand-md navbar-light">
+    <nav class="navbar sticky-top navbar-expand-md navbar-light bg-light">
       <!-- <img src="http://www.rainbowlogos.com/wp-content/uploads/2016/05/1-5-800x600.jpg" width="100" height="75" class="d-inline-block align-top" alt=""> -->
       <a class="navbar-brand" href="#">CoffeeFix</a>
       
@@ -43,7 +43,7 @@
 
         <!-- Right Aligned Navbar -->
         <ul class='navbar-nav mr' style="font-size: 14px;">
-          <li class='nav-item'>
+          <li id="cartNav" class='nav-item'>
             <a class='nav-link border-right' href='/cart'>
               <span>
                 <img src="./images/shopping-cart-solid.svg" style="width: 15px;">
@@ -51,6 +51,7 @@
               </span> Cart
             </a>
           </li>
+          <!-- If user is logged in, display  username  and sign out option  -->
           <% if (!currentUser) { %> 
             <li class='nav-item'>
               <a id="accountNav" class='nav-link border-right' href="/account"><span><img src="./images/user-solid.svg" style="width: 15px;"></span> Account</a>
@@ -69,25 +70,9 @@
           </li>
         </ul>
       </div>
-
-      <script>
-          url = window.location.href;
-    
-          if (url.search("shop") >= 0) {
-            document.getElementById("shopNav").classList.add("active");
-          } else if (url.search("stores") >= 0) {
-            document.getElementById("storesNav").classList.add("active");
-          } else if (url.search("story") >= 0) {
-            document.getElementById("storyNav").classList.add("active");
-          } else if (url.search("joinUs") >= 0) {
-            document.getElementById("joinUsNav").classList.add("active");
-          } else if (url.search("account") >= 0) {
-            document.getElementById("accountNav").classList.add("active");
-          } else {
-            document.getElementById("homeNav").classList.add("active");
-          }
-        </script>
     </nav>
+
+    <!-- Update Active Navbar Item -->
 
     <!-- Flash  message -->
       <% if (error && error.length > 0) { %>
