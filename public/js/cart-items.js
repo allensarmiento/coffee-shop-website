@@ -80,38 +80,6 @@ function removeItem(key) {
   updateCartItems();
 }
 
-// TODO: This needs to be an ajax request
-function checkout() {
-  // Get all the item names from the cart
-  items = [];
-  if (sessionStorage.length > 0) {
-    for (let i = 0; i < sessionStorage.length; i++) {
-      items.push(sessionStorage.key(i));
-    }
-  }
-
-  // Validate user login
-
-  // Send Ajax Post
-  var request = new XMLHttpRequest();
-  request.open('POST', '/cart/checkout', true);
-  // request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
-  request.setRequestHeader("Content-Type", "application/json");
-  request.onreadystatechange = function() {
-    if (request.readyState === 4 && request.status === 200) {
-      var json = JSON.parse(request.responseText);
-      console.log(json.items);
-    }
-  };
-  const data = JSON.stringify({'items': items});
-  request.send(data);
-
-  // Items are checked out, so clear cart
-  clearCart();
-
-  location.reload();
-}
-
 // Update Navbar
 function updateActiveNavbar() {
   url = window.location.href;
@@ -142,10 +110,6 @@ function updateActiveNavbar() {
 }
 
 // DEBUGGING PURPOSES
-function clearCart() {
-  sessionStorage.clear();
-}
-
 function printSessionStorage() {
   for (let i =0, len=sessionStorage.length; i < len; i++) {
     let key = sessionStorage.key(i);
