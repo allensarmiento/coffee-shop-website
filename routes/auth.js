@@ -33,7 +33,7 @@ router.post("/account/signUp", function(req, res) {
 // LOGIN ROUTES
 // ==============
 
-// middleware
+// log user in
 router.post("/login", passport.authenticate("local", {
   successRedirect: "/",
   failureRedirect: "/account",

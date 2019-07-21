@@ -82,7 +82,22 @@ function removeItem(key) {
 
 // TODO: This needs to be an ajax request
 function checkout() {
-  
+  // Get all the item names from the cart
+  items = [];
+  if (sessionStorage.length > 0) {
+    for (let i = 0; i < sessionStorage.length; i++) {
+      items.push(sessionStorage.key(i));
+    }
+  }
+
+  // Validate user login
+
+  // Send Ajax Post
+
+  // Items are checked out, so clear cart
+  clearCart();
+
+  location.reload();
 }
 
 // Update Navbar
