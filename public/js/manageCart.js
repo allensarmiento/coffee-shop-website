@@ -93,6 +93,18 @@ function checkout() {
   // Validate user login
 
   // Send Ajax Post
+  var request = new XMLHttpRequest();
+  request.open('POST', '/cart/checkout', true);
+  // request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
+  request.setRequestHeader("Content-Type", "application/json");
+  request.onreadystatechange = function() {
+    if (request.readyState === 4 && request.status === 200) {
+      var json = JSON.parse(request.responseText);
+      console.log(json.items);
+    }
+  };
+  const data = JSON.stringify({'items': items});
+  request.send(data);
 
   // Items are checked out, so clear cart
   clearCart();

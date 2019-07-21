@@ -22,6 +22,7 @@ mongoose.connect(url,  {useNewUrlParser: true});
 mongoose.set('useCreateIndex', true);
 mongoose.connection.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
+app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.set("view engine", "ejs"); // Expect ejs files
 app.use(express.static(__dirname + "/public")); // Public folder for css styles
