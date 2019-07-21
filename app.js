@@ -15,7 +15,8 @@ var express               = require("express"),
 
 // ROUTES
 var indexRoutes = require("./routes/index"),
-    authRoutes  = require("./routes/auth");
+    authRoutes  = require("./routes/auth"),
+    cartRoutes  = require("./routes/cart");
 
 var url = process.env.DATABASEURL || "mongodb://localhost:27017/Coffee_Shop";
 mongoose.connect(url,  {useNewUrlParser: true});
@@ -52,6 +53,7 @@ app.use(function(req, res, next) {
 // Routes
 app.use(indexRoutes);
 app.use(authRoutes);
+app.use(cartRoutes);
 
 // Listening on localhost
 app.listen(8000, function() {
