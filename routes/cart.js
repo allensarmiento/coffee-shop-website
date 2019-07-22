@@ -24,6 +24,7 @@ router.post("/checkout", middleware.isLoggedIn, function(req, res) {
     items.push({
       name: item.name,
       image: item.image,
+      price: item.price,
       quantity: item.quantity
     });
   });

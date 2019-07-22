@@ -29,7 +29,7 @@ function addToCart(itemName, itemImage) {
     sessionStorage[itemName] = JSON.stringify(value);
   } else {
     // Item not in session storage
-    let value = { image: itemImage, quantity: 1 };
+    let value = { image: itemImage, quantity: 1, price: 1.11 };
     sessionStorage.setItem(itemName, JSON.stringify(value)); // key: item name, value: quantity
   }
   updateCartItems();
@@ -114,6 +114,7 @@ function makeNewCard(key, value) {
           <div class="card-body">\
             <h5 class="card-title">' + key + '</h5>\
             <p class="card-text my-0">Quantity: ' + value.quantity + '</p>\
+            <p class="card-text my-0">Price: ' + value.price + '</p>\
             <button class="btn btn-sm btn-danger" onclick="removeItem(\'' + key + '\');">Remove</button>\
           </div>\
         </div>\

@@ -15,6 +15,7 @@ function getCartItems() {
       items.push({
         name: sessionStorage.key(i),
         image: item.image,
+        price: item.price,
         quantity: item.quantity
       });
     }
