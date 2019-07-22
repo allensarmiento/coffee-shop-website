@@ -1,0 +1,9 @@
+<% include partials/header %>
+
+<% invoice.items.forEach(function(item) { %>
+  <div>
+    <%= item.name %>
+  </div>
+<% }); %>
+
+<% include partials/footer %>

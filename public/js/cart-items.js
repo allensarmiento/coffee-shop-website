@@ -102,6 +102,9 @@ function updateActiveNavbar() {
   } else if (url.search("cart") >= 0) {
     document.getElementById("cartNav").classList.add("active");
     active_class="cartNav";
+  } else if (url.search("orders") >= 0) {
+    document.getElementById("ordersNav").classList.add("active");
+    active_class="ordersNav";
   } else {
     document.getElementById("homeNav").classList.add("active");
     active_class="homeNav";
