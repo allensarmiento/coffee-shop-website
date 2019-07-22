@@ -26,15 +26,3 @@ node app.js
 ```
 
 ## Challenges
-
-## Things to fix:
-- Text in homepage slider bar gets off place as the window size gets smaller [Done] 
-- When going to new page, the navigation highlight needs to be changed to appropriate page [Done]
-- Update username when logged in [Done]
-- Possibly fix the account/signUp route to /signUp 
-
-## Things to add:
-- Work on updating the cart, storage the information needed to update the cart page [Done]
-- Keep a running total of most purchased items, possibly calculating through invoices
-- Create customer invoices to view purchase history
-- Create admin accounts and cms 
