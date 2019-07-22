@@ -5,11 +5,15 @@ var Invoice = require('../models/invoice');
 var Shop = require("../models/shop");
 var Item = require("../models/item");
 
-router.get("/cart", isLoggedIn, function(req ,res) {
+router.get("/cart", function(req ,res) {
   res.render("cart");
 });
 
-router.post("/cart/checkout", isLoggedIn, function(req, res) {
+router.get("/checkout", isLoggedIn, function(req, res) {
+  res.render("checkout");
+});
+
+router.post("/checkout", function(req, res) {
   console.log(req.body.items);
 
   var user = {
@@ -20,7 +24,9 @@ router.post("/cart/checkout", isLoggedIn, function(req, res) {
   items = [];
   req.body.items.forEach(function(item) {
     items.push({
-      name: item
+      name: item.name,
+      image: item.image,
+      quantity: item.quantity
     });
   });
   // req.body.items.forEach(function(purchase) {
@@ -57,6 +63,7 @@ function isLoggedIn(req, res, next) {
   if (req.isAuthenticated()) {
     return next();
   }
+  req.flash("error", "Please login first");
   res.redirect("/account");
 }
 

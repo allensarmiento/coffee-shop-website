@@ -7,11 +7,11 @@ router.get("/orders", isLoggedIn, function(req, res) {
     id: req.user._id,
     username: req.user.username
   };
-  Invoice.findOne({customer: customer}, function(err, invoice) {
+  Invoice.find({customer: customer}, function(err, invoices) {
     if (err) {
       console.log(err);
     } else {
-      res.render("orders", {invoice: invoice});
+      res.render("orders", {invoices: invoices});
     }
   });
 });

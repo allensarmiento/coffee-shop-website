@@ -2,7 +2,7 @@ window.onload = start();
 
 function start() {
   let active_class = updateActiveNavbar();
-  if (active_class === "cartNav") {
+  if (active_class === "cartNav" || url.search("checkout") >= 0) {
     loadCartItems();
   }
   updateCartItems();

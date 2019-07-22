@@ -1,9 +1,31 @@
 <% include partials/header %>
 
-<% invoice.items.forEach(function(item) { %>
-  <div>
-    <%= item.name %>
-  </div>
-<% }); %>
+<% let count = 1; %>
+
+<div class="container">
+  <h1>Your Recent Orders</h1>
+  <% if (invoices.length <= 0) { %>
+    <div class="m-5">You have no orders</div>
+  <% } %>
+
+  <% invoices.forEach(function(invoice) { %>
+    <h3>Order #<%= count++ %></h3>
+    <% invoice.items.forEach(function(item) { %>
+      <div class="card mb-3" style="max-width: 540px;">
+        <div class="row no-gutters">
+          <div class="col-md-4">
+              <img src="<%= item.image %>" class="card-img" alt="...">
+          </div>
+          <div class="col-md-8">
+            <div class="card-body">
+              <h5 class="card-title"><%= item.name %></h5>
+              <p class="card-text my-0">Quantity: <%= item.quantity %></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% }); %>
+  <% }); %>
+</div>
 
 <% include partials/footer %>

@@ -1,15 +1,14 @@
 var express               = require("express"),
     app                   = express(),
+    bodyParser            = require("body-parser"),
     mongoose              = require("mongoose"),
     flash                 = require("connect-flash"),
-    bodyParser            = require("body-parser"),
-
     passport              = require("passport"),
-    User                  = require("./models/user"),
     LocalStrategy         = require("passport-local"),
     methodOverride        = require("method-override"),
     passportLocalMongoose = require("passport-local-mongoose"),
 
+    User                  = require("./models/user"),
     Shop                  = require("./models/shop"),
     Stores                = require("./models/stores");
 
@@ -21,6 +20,7 @@ var indexRoutes   = require("./routes/index"),
 
 var url = process.env.DATABASEURL || "mongodb://localhost:27017/Coffee_Shop";
 mongoose.connect(url,  {useNewUrlParser: true});
+mongoose.set("useFindAndModify", false);
 mongoose.set('useCreateIndex', true);
 mongoose.connection.on('error', console.error.bind(console, 'MongoDB connection error:'));
 
