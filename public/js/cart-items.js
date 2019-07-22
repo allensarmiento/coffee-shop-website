@@ -1,5 +1,6 @@
 window.onload = start();
 
+// Executed across all pagess 
 function start() {
   let active_class = updateActiveNavbar();
   if (active_class === "cartNav" || url.search("checkout") >= 0) {
@@ -8,31 +9,13 @@ function start() {
   updateCartItems();
 }
 
+// Load the cart items from session storage
 function loadCartItems() {
-  if (sessionStorage.length === 0) {
-    document.getElementById("cart").innerHTML += 
-    '<div class="m-5">Your cart is empty</div>'
-  }
+  checkEmptyCart();
   for (let i=0, len=sessionStorage.length; i<len; i++) {
     let key = sessionStorage.key(i);
     let value = JSON.parse(sessionStorage[key]);
-
-    new_card = 
-    '<div class="card mb-3" style="max-width: 540px;">\
-      <div class="row no-gutters">\
-        <div class="col-md-4">\
-          <img src="' + value.image + '" class="card-img" alt="...">\
-        </div>\
-        <div class="col-md-8">\
-          <div class="card-body">\
-            <h5 class="card-title">' + key + '</h5>\
-            <p class="card-text my-0">Quantity: ' + value.quantity + '</p>\
-            <button class="btn btn-sm btn-danger" onclick="removeItem(\'' + key + '\');">Remove</button>\
-          </div>\
-        </div>\
-      </div>\
-    </div>';
-
+    let new_card = makeNewCard(key, value);
     document.getElementById("cart").innerHTML += new_card;
   }
 }
@@ -40,7 +23,7 @@ function loadCartItems() {
 // Add item to cart
 function addToCart(itemName, itemImage) {
   if (sessionStorage.getItem(itemName)) {
-    // If item already in session storage
+    // Item exists in storage
     let value = JSON.parse(sessionStorage[itemName]);
     value.quantity = Number(value.quantity + 1);
     sessionStorage[itemName] = JSON.stringify(value);
@@ -49,16 +32,15 @@ function addToCart(itemName, itemImage) {
     let value = { image: itemImage, quantity: 1 };
     sessionStorage.setItem(itemName, JSON.stringify(value)); // key: item name, value: quantity
   }
-  // Update cart number
   updateCartItems();
 }
 
 // Update the number of cart items
 function updateCartItems() {
-  // Get place to show the number of items in cart
+  // Id with span to update cart counter
   let cartNumber = document.getElementById("cart-number");
   let count = 0;
-  // Loop through items in cart and count the quantity
+  // Count the number of items in art
   for (let i=0, len=sessionStorage.length; i<len; i++) {
     let key = sessionStorage.key(i);
     let value = JSON.parse(sessionStorage[key]);
@@ -71,12 +53,12 @@ function updateCartItems() {
   }
 }
 
+// Remove item from storage
 function removeItem(key) {
   if (sessionStorage.getItem(key)) {
     sessionStorage.removeItem(key);
     location.reload();
   }
-
   updateCartItems();
 }
 
@@ -110,6 +92,34 @@ function updateActiveNavbar() {
     active_class="homeNav";
   }
   return active_class;
+}
+
+// Display message if cart is empty
+function checkEmptyCart() {
+  if (sessionStorage.length === 0) {
+    document.getElementById("cart").innerHTML += 
+    '<div class="m-5">Your cart is empty</div>'
+  }
+}
+
+// Create a new card
+function makeNewCard(key, value) {
+  let new_card = 
+    '<div class="card mb-3" style="max-width: 540px;">\
+      <div class="row no-gutters">\
+        <div class="col-md-4">\
+          <img src="' + value.image + '" class="card-img" alt="...">\
+        </div>\
+        <div class="col-md-8">\
+          <div class="card-body">\
+            <h5 class="card-title">' + key + '</h5>\
+            <p class="card-text my-0">Quantity: ' + value.quantity + '</p>\
+            <button class="btn btn-sm btn-danger" onclick="removeItem(\'' + key + '\');">Remove</button>\
+          </div>\
+        </div>\
+      </div>\
+    </div>';
+  return new_card;
 }
 
 // DEBUGGING PURPOSES

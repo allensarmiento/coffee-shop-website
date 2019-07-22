@@ -1,13 +1,12 @@
+// Perform checkout procedure
 function checkout() {
-  // Get all the item names from the cart
   items = getCartItems();
-  // Ajax post request
   checkoutRequest(items);
-  // Items are checked out, so clear cart
   clearCart();
   location.reload();
 }
 
+// Return an array of items from storage
 function getCartItems() {
   let items = []
   if (sessionStorage.length > 0) {
@@ -23,11 +22,10 @@ function getCartItems() {
   return items;
 }
 
+// Send items as a post request
 function checkoutRequest(items) {
-  // Send Ajax Post
   var request = new XMLHttpRequest();
   request.open('POST', '/checkout', true);
-  // request.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded; charset=UTF-8');
   request.setRequestHeader("Content-Type", "application/json");
   request.onreadystatechange = function() {
     if (request.readyState === 4 && request.status === 200) {

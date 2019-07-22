@@ -11,8 +11,8 @@ var InvoiceSchema = new mongoose.Schema({
   items: [
     {
       name: String,
-      price: String,
       image: String,
+      price: String,
       quantity: String
     }
   ]

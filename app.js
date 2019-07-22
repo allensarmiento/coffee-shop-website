@@ -43,7 +43,7 @@ passport.use(new LocalStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
 
-// Middleware to be used on all pages to tell if user is logged in or not.
+// Middleware to be used on all pages
 app.use(function(req, res, next) {
   res.locals.currentUser =  req.user;
   res.locals.error = req.flash("error");
