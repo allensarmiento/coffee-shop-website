@@ -1,8 +1,9 @@
 var express = require("express");
 var router = express.Router();
 var Invoice = require("../models/invoice");
+var middleware = require("../middleware");
 
-router.get("/orders", isLoggedIn, function(req, res) {
+router.get("/orders", middleware.isLoggedIn, function(req, res) {
   let customer = {
     id: req.user._id,
     username: req.user.username
@@ -15,12 +16,5 @@ router.get("/orders", isLoggedIn, function(req, res) {
     }
   });
 });
-
-function isLoggedIn(req, res, next) {
-  if (req.isAuthenticated()) {
-    return next();
-  }
-  res.redirect("/account");
-}
 
 module.exports = router;
