@@ -18,7 +18,6 @@
         let tax_rate = 0.075;
         invoice.items.forEach(function(item) {
           shop_total += Number.parseFloat(item.price) * Number.parseInt(item.quantity);
-          console.log(total);
         }); 
         total = shop_total + (shop_total * tax_rate);
       %>
