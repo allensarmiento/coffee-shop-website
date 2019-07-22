@@ -5,8 +5,47 @@ function start() {
   let active_class = updateActiveNavbar();
   if (active_class === "cartNav" || url.search("checkout") >= 0) {
     loadCartItems();
+      if (sessionStorage.length > 0) {
+      if (active_class === "cartNav") {
+        displayShoppingTotal();
+      } else if (url.search("checkout") >= 0) {
+        displayTotal();
+      }
+    }
   }
   updateCartItems();
+}
+
+function displayShoppingTotal() {
+  let total = 0.00;
+  for (let i=0, len=sessionStorage.length; i<len; i++) {
+    let key = sessionStorage.key(i);
+    let value = JSON.parse(sessionStorage[key]);
+    total += value.price * value.quantity;
+  }
+  document.getElementById("cart").innerHTML += 
+    '<h5>Shopping Total: $' + Number.parseFloat(total).toFixed(2) + '</h5>\
+    <a class="btn btn-warning" href="/checkout">Proceed to Checkout</a>';
+}
+
+function displayTotal() {
+  let shop_total = 0.00;
+  let taxes = 0;
+  let tax_rate = 0.075;
+  let total = 0;
+  for (let i=0, len=sessionStorage.length; i<len; i++) {
+    let key = sessionStorage.key(i);
+    let value = JSON.parse(sessionStorage[key]);
+    shop_total += value.price * value.quantity;
+    taxes = shop_total * tax_rate;
+    total = shop_total + taxes;
+  }
+  document.getElementById("cart").innerHTML += 
+    '\
+      <h5>Items: $' + Number.parseFloat(shop_total).toFixed(2) + '</h5>\
+      <h5>Taxes: $' + Number.parseFloat(taxes).toFixed(2) + '<h5>\
+      <h5>Total: $' + Number.parseFloat(total).toFixed(2) + '</h5>\
+    ';
 }
 
 // Load the cart items from session storage
@@ -114,7 +153,7 @@ function makeNewCard(key, value) {
           <div class="card-body">\
             <h5 class="card-title">' + key + '</h5>\
             <p class="card-text my-0">Quantity: ' + value.quantity + '</p>\
-            <p class="card-text my-0">Price: ' + value.price + '</p>\
+            <p class="card-text my-0">Price: $' + Number.parseFloat(value.price * value.quantity).toFixed(2) + '</p>\
             <button class="btn btn-sm btn-danger" onclick="removeItem(\'' + key + '\');">Remove</button>\
           </div>\
         </div>\

@@ -9,7 +9,21 @@
   <% } %>
 
   <% invoices.forEach(function(invoice) { %>
-    <h3>Order #<%= count++ %></h3>
+    <h3>
+      Order #
+      <%= count++ %>
+      <% 
+        let total = 0;
+        let shop_total = 0.00;
+        let tax_rate = 0.075;
+        invoice.items.forEach(function(item) {
+          shop_total += Number.parseFloat(item.price) * Number.parseInt(item.quantity);
+          console.log(total);
+        }); 
+        total = shop_total + (shop_total * tax_rate);
+      %>
+      <span class="lead">Total: $<%= Number.parseFloat(total).toFixed(2) %></span>
+    </h3>
     <% invoice.items.forEach(function(item) { %>
       <div class="card mb-3" style="max-width: 540px;">
         <div class="row no-gutters">
@@ -20,7 +34,7 @@
             <div class="card-body">
               <h5 class="card-title"><%= item.name %></h5>
               <p class="card-text my-0">Quantity: <%= item.quantity %></p>
-              <p class="card-text my-0">Price: <%= item.price %></p>
+              <p class="card-text my-0">Price: <%= Number.parseFloat(parseFloat(item.price) * parseInt(item.quantity)).toFixed(2) %></p>
             </div>
           </div>
         </div>
