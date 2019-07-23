@@ -5,7 +5,7 @@ function start() {
   let active_class = updateActiveNavbar();
   if (active_class === "cartNav" || url.search("checkout") >= 0) {
     loadCartItems();
-      if (sessionStorage.length > 0) {
+    if (sessionStorage.length > 0) {
       if (active_class === "cartNav") {
         displayShoppingTotal();
       } else if (url.search("checkout") >= 0) {
@@ -24,7 +24,7 @@ function displayShoppingTotal() {
     total += value.price * value.quantity;
   }
   document.getElementById("cart").innerHTML += 
-    '<h5>Shopping Total: $' + Number.parseFloat(total).toFixed(2) + '</h5>\
+    '<h5>Items Total: $' + Number.parseFloat(total).toFixed(2) + '</h5>\
     <a class="btn btn-warning" href="/checkout">Proceed to Checkout</a>';
 }
 
@@ -45,6 +45,7 @@ function displayTotal() {
       <h5>Items: $' + Number.parseFloat(shop_total).toFixed(2) + '</h5>\
       <h5>Taxes: $' + Number.parseFloat(taxes).toFixed(2) + '<h5>\
       <h5>Total: $' + Number.parseFloat(total).toFixed(2) + '</h5>\
+      <button class="btn btn-warning" onclick="checkout();">Checkout</button>\
     ';
 }
 
@@ -61,14 +62,18 @@ function loadCartItems() {
 
 // Add item to cart
 function addToCart(itemName, itemImage) {
+  var sel = document.getElementById(itemName.split(" ").join("-"));
+  var quantity = Number.parseInt(sel.value);
+  sel.value = "1";
+
   if (sessionStorage.getItem(itemName)) {
     // Item exists in storage
     let value = JSON.parse(sessionStorage[itemName]);
-    value.quantity = Number(value.quantity + 1);
+    value.quantity = Number(value.quantity + quantity);
     sessionStorage[itemName] = JSON.stringify(value);
   } else {
     // Item not in session storage
-    let value = { image: itemImage, quantity: 1, price: 1.11 };
+    let value = { image: itemImage, quantity: quantity, price: 1.11 };
     sessionStorage.setItem(itemName, JSON.stringify(value)); // key: item name, value: quantity
   }
   updateCartItems();
