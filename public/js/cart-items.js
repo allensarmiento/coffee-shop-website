@@ -157,9 +157,9 @@ function makeNewCard(key, value) {
         <div class="col-md-8">\
           <div class="card-body">\
             <h5 class="card-title">' + key + '</h5>\
-            <p class="card-text my-0">Quantity: ' + value.quantity + '</p>\
-            <p class="card-text my-0">Price: $' + Number.parseFloat(value.price * value.quantity).toFixed(2) + '</p>\
-            <button class="btn btn-sm btn-danger" onclick="removeItem(\'' + key + '\');">Remove</button>\
+            <p class="card-text my-2 ml-3 d-inline">Quantity: ' + value.quantity + '</p>\
+            <p class="card-text my-2 ml-3 d-inline">Price: $' + Number.parseFloat(value.price * value.quantity).toFixed(2) + '</p>\
+            <button class="btn btn-sm btn-danger my-2 ml-3" onclick="removeItem(\'' + key + '\');">Remove</button>\
           </div>\
         </div>\
       </div>\
