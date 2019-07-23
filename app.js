@@ -10,7 +10,8 @@ var express               = require("express"),
 
     User                  = require("./models/user"),
     Shop                  = require("./models/shop"),
-    Stores                = require("./models/stores");
+    Stores                = require("./models/stores"),
+    seedDB                = require("./seeds");
 
 // ROUTES
 var indexRoutes   = require("./routes/index"),
@@ -30,6 +31,7 @@ app.set("view engine", "ejs"); // Expect ejs files
 app.use(express.static(__dirname + "/public")); // Public folder for css styles
 app.use(methodOverride("_method"));
 app.use(flash());
+seedDB(); // seed the database
 
 // PASSPORT CONFIGURATION
 app.use(require("express-session")({

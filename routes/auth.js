@@ -1,6 +1,7 @@
 var express = require("express");
 var router = express.Router();
 var User = require("../models/user");
+var Invoice = require("../models/invoice");
 
 var passport = require("passport");
 
@@ -15,6 +16,28 @@ router.get("/account", function(req, res) {
 
 // handling users
 router.post("/account/signUp", function(req, res) {
+  // NOTE: Since this is a mockup application, to prevent the number of users being infinite, only 100 users can be registered
+  User.countDocuments({}, function(err, count) {
+    console.log("Number of users before: ", count);
+    if (count >= 100) {
+      Invoice.deleteMany({}, function(err, count) {
+        if (err) {
+          console.log(err);
+        } else {
+          console.log("Too many users, deleting all invoices before all users");
+          User.deleteMany({}, function(err, count) {
+            if (err) {
+              console.log(err);
+            } else {
+              console.log("Too many users, reset user database");
+            }
+          });
+        }
+      });
+    }
+  });
+
+  // Register new user
   User.register(new User({username: req.body.username}), req.body.password, function(err, user) {
     if (err) {
       req.flash("error", err.message);
