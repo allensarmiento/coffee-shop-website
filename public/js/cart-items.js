@@ -108,7 +108,7 @@ function removeItem(key) {
 
 // Update Navbar
 function updateActiveNavbar() {
-  url = window.location.href;
+  url = window.location.pathname;
   let active_class = "";
   if (url.search("shop") >= 0) {
     document.getElementById("shopNav").classList.add("active");
