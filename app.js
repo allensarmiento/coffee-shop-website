@@ -35,7 +35,7 @@ seedDB(); // seed the database
 
 // PASSPORT CONFIGURATION
 app.use(require("express-session")({
-  secret: "This is a default sentence",
+  secret: process.env.SESSION_SECRET || "This is a default sentence",
   resave: false,
   saveUninitialized: false
 }));
