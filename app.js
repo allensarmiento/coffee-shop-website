@@ -59,11 +59,7 @@ app.use(authRoutes);
 app.use(cartRoutes);
 app.use(ordersRoutes);
 
-// Listening on localhost
-// app.listen(8000, function() {
-//   console.log("Server is listening!!");
-// });
-
+// Listen for app
 port = process.env.PORT || 8000;
 app.listen(port, process.env.IP, function() {
   console.log("Server is listening!!");

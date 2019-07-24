@@ -3,7 +3,6 @@ var router = express.Router();
 var User = require("../models/user");
 var Invoice = require('../models/invoice');
 var Shop = require("../models/shop");
-var Item = require("../models/item");
 var middleware = require("../middleware");
 
 router.get("/cart", function(req ,res) {

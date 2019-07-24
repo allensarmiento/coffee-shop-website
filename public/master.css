@@ -3,20 +3,12 @@ html, body {
   padding: 0;
 }
 
-body {
-  /* background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOfDuTI7BdmGRcnrb6HURaFArLkNfhu8y5IOrE7dJu7FqEyl-lOg'); */
-  /* background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQR2_-zeRSC6RfZnYj5zZV7jpv_bTEtRB-ooUdub-uTkjlOQjgB'); */
-  /* background: url('https://backgroundcheckall.com/wp-content/uploads/2018/10/coffee-background-tumblr-6.jpg'); */
-  /* background: #fff; */
-}
-
 .card-title {
   text-align: center;
 }
 
 .carousel-item {
   max-height: 100vh;
-  /* height: 100%; */
 }
 
 .coffee-blends {
@@ -37,7 +29,9 @@ body {
 }
 
 .footer {
-  background: #735744;
+  /* background: #735744; */
+  /* background: #321911; */
+  background: #4b2c20;  
 }
 
 .view-height-90 {

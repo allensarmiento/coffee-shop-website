@@ -25,4 +25,11 @@ npm install
 node app.js
 ```
 
+## Limitations
+  * This is a mock up site, so to prevent an infinite amount of users, then number of users that can exist in the database is 100. This can be changed by editing the seeds.js file.
+  * No changing of username and password has been implemented.
+  * Admin accounts were not created during the first iteration, so changing the items and stores information would require editing the seeds.js file and restarting the server.
+
 ## Challenges
+  * Hiding of buttons needed to be handled to prevent users from placing orders of nothing.
+  * Understanding how callbacks worked to be able to update the invoices and push all items from the cart to the invoice schema.
