@@ -61,7 +61,7 @@ function loadCartItems() {
 }
 
 // Add item to cart
-function addToCart(itemName, itemImage) {
+function addToCart(itemName, itemImage, itemPrice) {
   var sel = document.getElementById(itemName.split(" ").join("-"));
   var quantity = Number.parseInt(sel.value);
   sel.value = "1";
@@ -73,7 +73,7 @@ function addToCart(itemName, itemImage) {
     sessionStorage[itemName] = JSON.stringify(value);
   } else {
     // Item not in session storage
-    let value = { image: itemImage, quantity: quantity, price: 1.11 };
+    let value = { image: itemImage, quantity: quantity, price: Number.parseFloat(itemPrice).toFixed(2) };
     sessionStorage.setItem(itemName, JSON.stringify(value)); // key: item name, value: quantity
   }
   updateCartItems();
