@@ -1,5 +1,5 @@
 # Coffee-Shop-Website
-This project implements a coffee shop website. Users can log in, sign up and order from the menu. Popular items ordered are displayed on the homepage.
+This project implements a coffee shop website. Users can log in, sign up and order items from the shop. Popular drinks are displayed on the homepage.
 
 ## Built With
 * CSS, HTML, JavaScript, Bootstrap 4
