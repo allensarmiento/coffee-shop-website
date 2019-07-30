@@ -25,7 +25,7 @@ function getCartItems() {
 
 // Send items as a post request
 function checkoutRequest(items) {
-  var request = new XMLHttpRequest();
+  const request = new XMLHttpRequest();
   request.open('POST', '/checkout', true);
   request.setRequestHeader("Content-Type", "application/json");
   request.onreadystatechange = function() {

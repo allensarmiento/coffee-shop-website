@@ -1,9 +1,8 @@
-var express = require("express");
-var router = express.Router();
-var User = require("../models/user");
-var Invoice = require("../models/invoice");
-
-var passport = require("passport");
+const express = require("express");
+const passport = require("passport");
+const router = express.Router();
+const User = require("../models/user");
+const Invoice = require("../models/invoice");
 
 // ==============
 // AUTH ROUTES

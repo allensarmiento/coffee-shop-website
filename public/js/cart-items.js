@@ -62,8 +62,8 @@ function loadCartItems() {
 
 // Add item to cart
 function addToCart(itemName, itemImage, itemPrice) {
-  var sel = document.getElementById(itemName.split(" ").join("-"));
-  var quantity = Number.parseInt(sel.value);
+  let sel = document.getElementById(itemName.split(" ").join("-"));
+  let quantity = Number.parseInt(sel.value);
   sel.value = "1";
 
   if (sessionStorage.getItem(itemName)) {

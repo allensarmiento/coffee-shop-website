@@ -1,4 +1,4 @@
-var express               = require("express"),
+const express               = require("express"),
     app                   = express(),
     bodyParser            = require("body-parser"),
     mongoose              = require("mongoose"),
@@ -14,12 +14,12 @@ var express               = require("express"),
     seedDB                = require("./seeds");
 
 // ROUTES
-var indexRoutes   = require("./routes/index"),
+const indexRoutes   = require("./routes/index"),
     authRoutes    = require("./routes/auth"),
     cartRoutes    = require("./routes/cart"),
     ordersRoutes  = require("./routes/orders");
 
-var url = process.env.DATABASEURL || "mongodb://localhost:27017/Coffee_Shop";
+const url = process.env.DATABASEURL || "mongodb://localhost:27017/Coffee_Shop";
 mongoose.connect(url,  {useNewUrlParser: true});
 mongoose.set("useFindAndModify", false);
 mongoose.set('useCreateIndex', true);

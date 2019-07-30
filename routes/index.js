@@ -1,7 +1,7 @@
-var express = require("express");
-var router = express.Router();
-var Shop = require("../models/shop");
-var Stores = require("../models/stores");
+const express = require("express");
+const router = express.Router();
+const Shop = require("../models/shop");
+const Stores = require("../models/stores");
 
 router.get("/", function(req, res) {
   res.render("home");

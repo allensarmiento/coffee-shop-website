@@ -1,7 +1,7 @@
-var express = require("express");
-var router = express.Router();
-var Invoice = require("../models/invoice");
-var middleware = require("../middleware");
+const express = require("express");
+const router = express.Router();
+const Invoice = require("../models/invoice");
+const middleware = require("../middleware");
 
 router.get("/orders", middleware.isLoggedIn, function(req, res) {
   let customer = {

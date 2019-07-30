@@ -3,13 +3,13 @@
 // This seeds the entire database so that the website starts with no users
 // and no invoices.
 
-var mongoose = require("mongoose");
-var Shop = require("./models/shop");
-var Stores = require("./models/stores");
-var Invoice = require("./models/invoice");
-var User = require("./models/user");
+const mongoose = require("mongoose");
+const Shop = require("./models/shop");
+const Stores = require("./models/stores");
+const Invoice = require("./models/invoice");
+const User = require("./models/user");
 
-var items = [
+let items = [
   {blend: "Dark", name: "Dark Expresso", price: "8.99", image: "https://cdn.shopify.com/s/files/1/0002/1115/7052/products/brazil1_dkroast_400.jpg?v=1549596309"},
   {blend: "Dark", name: "Haitian", price: "7.99", image: "https://www.holybeanscafe.com/holybeanscafe/wp-content/uploads/2015/11/dark-roast-coffee.jpg"},
   {blend: "Dark", name: "Paris", price: "7.99", image: "https://images.unsplash.com/photo-1447933601403-0c6688de566e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1912&q=80"},
@@ -27,7 +27,7 @@ var items = [
   {blend: "Decaf", name: "Cinnamon Pecan", price: "6.99", image: "https://i0.wp.com/ottosgranary.com/wp-content/uploads/2019/04/Decaf-Cinnamon-Pecan-Praline-Coffee-Beans.jpg?fit=600%2C600&ssl=1"}
 ];
 
-var stores = [
+let stores = [
   {city: "San Francisco", street: "Golden Gate", bgImage: "https://images.unsplash.com/photo-1487132906645-8e0fbba067e0?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1500&q=80"},
   {city: "San Francisco", street: "Mission District", bgImage: "https://images.unsplash.com/photo-1439396087961-98bc12c21176?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1780&q=80"},
   {city: "San Francisco", street: "Midtown Terrace", bgImage: "https://images.unsplash.com/photo-1445359179985-460648949e10?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1334&q=80"},

@@ -1,6 +1,6 @@
-var mongoose = require("mongoose");
+const mongoose = require("mongoose");
 
-var InvoiceSchema = new mongoose.Schema({
+const InvoiceSchema = new mongoose.Schema({
   customer: {
     id: {
       type: mongoose.Schema.Types.ObjectId,
