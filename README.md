@@ -1,6 +1,5 @@
 # Coffee-Shop-Website
 This project implements a coffee shop website. Users can log in, sign up and order items from the shop. Popular drinks are displayed on the homepage.
-![Home page](screenshots/home.png)
 
 ## Built With
 * CSS, HTML, JavaScript, Bootstrap 4
@@ -8,10 +7,9 @@ This project implements a coffee shop website. Users can log in, sign up and ord
 
 ## Screenshots
 <div>
+  <img src="./screenshots/home.png" alt="Home page" width="400" height="400">
   <img src="./screenshots/stores.png" alt="Stores page" width="400" height="400">
-  <img src="./screenshots/shop.png" alt="Shop page" width="400" height="400">
-</div>
-<div>
+  <img src="./screenshots/shop.png" alt="Shop page" width="300" height="400">
   <img src="./screenshots/stores.png" alt="Stores page" width="400" height="400">
 </div>
 
