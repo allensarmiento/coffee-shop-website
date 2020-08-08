@@ -8,11 +8,11 @@ This project implements a coffee shop website. Users can log in, sign up and ord
 
 ## Screenshots
 <div>
-  <img src="./screenshots/stores.png" alt="Stores page" style="width: 50%;">
-  <img src="./screenshots/shop.png" alt="Shop page" style="width: 50%;">
+  <img src="./screenshots/stores.png" alt="Stores page" width="500" height="500">
+  <img src="./screenshots/shop.png" alt="Shop page" width="500" height="500">
 </div>
 <div>
-  <img src="./screenshots/stores.png" alt="Stores page" style="width: 50%;">
+  <img src="./screenshots/stores.png" alt="Stores page" width="500" height="500">
 </div>
 
 ## How to modify:
