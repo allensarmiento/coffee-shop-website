@@ -1,9 +1,7 @@
 <% include partials/header %>
 
-<!-- ============== FORMS ================= -->
 <div class="container">
   <div class="row">
-    <!-- ============= LOGIN SECTION ============== -->
     <div class="col-6">
       <form action="/login" method="POST">
         <h1>Login</h1>
@@ -11,10 +9,6 @@
             <label for="exampleInputUser0">Username</label>
             <input type="text" class="form-control" id="exampleInputUser0" aria-describedby="emailHelp" placeholder="Enter username" name="username">
           </div>
-        <!-- <div class="form-group">
-          <label for="exampleInputEmail1">Email</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email" name="useremail">
-        </div> -->
         <div class="form-group">
           <label for="exampleInputPassword1">Password</label>
           <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password">
@@ -22,7 +16,7 @@
         <button type="submit" class="btn btn-primary">Log in</button>
       </form>
     </div>
-    <!-- ============= SIGNUP SECTION =============== -->
+
     <div class="col-6">
       <form action="/account/signUp" method="POST">
         <h1>Sign Up</h1>
@@ -30,10 +24,6 @@
           <label for="exampleFormControlInput0">Username</label>
           <input type="text" class="form-control" id="exampleFormControlInput0" placeholder="Username" name="username" required>
         </div>
-        <!-- <div class="form-group">
-          <label for="exampleFormControlInput1">Email</label>
-          <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com" name="useremail" required>
-        </div> -->
         <div class="form-group">
           <label for="exampleInputPassword1">Password</label>
           <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password" required>

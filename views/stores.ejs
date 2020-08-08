@@ -1,7 +1,6 @@
 <% include partials/header %>
 
-<!-- =================== PAGE IMAGE ======================= -->
-<div class="jumbotron jumbotron-fluid view-height-90 store-image">
+<div class="jumbotron jumbotron-fluid view-height-90 store-image" style="background: url('<%= store.image %>')">
   <div class="card mt-5 p-3" style="width: 25rem; height: 17rem;">
     <div class="card-body border text-dark">
       <h1 class="card-title">LET'S HAVE SOME COFFEE</h1>
@@ -10,15 +9,12 @@
   </div>
 </div>
 
-<!-- =================== CONTENT ===================== -->
 <div class="container">
-  <hr> <!-- ------------------------ -->
+  <hr> 
   <h1 class="text-center">Locations</h1>
-  <hr> <!-- ------------------------ -->
+  <hr> 
 
-  <!-- ============= LOCATIONS ============== -->
   <div class="row">
-
     <% 
       let visited = [];
       stores.forEach(function(store) {
@@ -35,7 +31,6 @@
           </div>
         </div>
     <% }); %> 
-
   </div>
 </div>
 

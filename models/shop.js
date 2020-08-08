@@ -7,5 +7,4 @@ const shopSchema = new mongoose.Schema({
   image: String
 });
 
-// NOTE: Mongoose by default add an S, so to prevent looking for Shops, specify to look for Shop as the 3rd parameter.
 module.exports = mongoose.model("Shop", shopSchema, "Shop"); 

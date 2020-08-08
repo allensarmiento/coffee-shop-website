@@ -1,23 +1,12 @@
 <% include partials/header %>
 
-<!-- =================== PAGE IMAGE ======================= -->
-<img class="header-image" src="https://images.unsplash.com/photo-1498653893439-4a6b2ed3b9ad?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60" alt="">
+<img class="header-image" src="<%= shop.image %>" alt="">
 
-<!-- =================== CONTENT ===================== -->
 <div class="container">
-  <hr> <!-- ------------------------ -->
+  <hr>
   <h1 class="text-center">Select From Our Available Blends</h1>
-    <!-- Current class displays the current items-->
-  <!-- <ul class="coffee-blends">
-    <li class="current"><button class="border-0 bg-transparent">All</button></li>
-    <li><button class="border-0 bg-transparent">Dark Blends</button></li>
-    <li><button class="border-0 bg-transparent">Medium Blends</button></li>
-    <li><button class="border-0 bg-transparent">Light Blends</button></li>
-    <li><button class="border-0 bg-transparent">Decaf</button></li>
-  </ul> -->
-  <hr> <!-- ------------------------ -->
+  <hr> 
 
-  <!-- ============= COFFEE BLENDS ============== -->
   <div class="row">
     <% items.forEach(function(item) { %>
       <div class="col-lg-6">

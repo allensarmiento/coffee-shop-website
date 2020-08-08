@@ -5,21 +5,21 @@
     "node": "10.16.0"
   },
   "description": "Coffee Shop Website",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
-    "start": "node app.js",
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/allensarmiento/Coffee-Shop-Website.git"
+    "url": "git+https://github.com/allensarmiento/coffee-shop-website.git"
   },
   "author": "Allen Sarmiento",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/allensarmiento/Coffee-Shop-Website/issues"
+    "url": "https://github.com/allensarmiento/coffee-shop-website/issues"
   },
-  "homepage": "https://github.com/allensarmiento/Coffee-Shop-Website#readme",
+  "homepage": "https://github.com/allensarmiento/coffee-shop-website#readme",
   "dependencies": {
     "body-parser": "^1.19.0",
     "connect-flash": "^0.1.1",

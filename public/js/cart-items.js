@@ -1,6 +1,5 @@
 window.onload = start();
 
-// Executed across all pagess 
 function start() {
   let active_class = updateActiveNavbar();
   if (active_class === "cartNav" || url.search("checkout") >= 0) {
@@ -49,7 +48,6 @@ function displayTotal() {
     ';
 }
 
-// Load the cart items from session storage
 function loadCartItems() {
   checkEmptyCart();
   for (let i=0, len=sessionStorage.length; i<len; i++) {
@@ -60,7 +58,6 @@ function loadCartItems() {
   }
 }
 
-// Add item to cart
 function addToCart(itemName, itemImage, itemPrice) {
   let sel = document.getElementById(itemName.split(" ").join("-"));
   let quantity = Number.parseInt(sel.value);
@@ -79,25 +76,21 @@ function addToCart(itemName, itemImage, itemPrice) {
   updateCartItems();
 }
 
-// Update the number of cart items
 function updateCartItems() {
-  // Id with span to update cart counter
   let cartNumber = document.getElementById("cart-number");
   let count = 0;
-  // Count the number of items in art
   for (let i=0, len=sessionStorage.length; i<len; i++) {
     let key = sessionStorage.key(i);
     let value = JSON.parse(sessionStorage[key]);
     quantity = Number(value.quantity);
     count += quantity;
-    // Update cart item number if greater than 0
+
     if (Number(count) > 0) {
       cartNumber.textContent = Number(count);
     }
   }
 }
 
-// Remove item from storage
 function removeItem(key) {
   if (sessionStorage.getItem(key)) {
     sessionStorage.removeItem(key);
@@ -106,7 +99,6 @@ function removeItem(key) {
   updateCartItems();
 }
 
-// Update Navbar
 function updateActiveNavbar() {
   url = window.location.pathname;
   let active_class = "";
@@ -138,7 +130,6 @@ function updateActiveNavbar() {
   return active_class;
 }
 
-// Display message if cart is empty
 function checkEmptyCart() {
   if (sessionStorage.length === 0) {
     document.getElementById("cart").innerHTML += 
@@ -146,7 +137,6 @@ function checkEmptyCart() {
   }
 }
 
-// Create a new card
 function makeNewCard(key, value) {
   let new_card = 
     '<div class="card mb-3" style="max-width: 540px;">\
@@ -167,7 +157,6 @@ function makeNewCard(key, value) {
   return new_card;
 }
 
-// DEBUGGING PURPOSES
 function printSessionStorage() {
   for (let i =0, len=sessionStorage.length; i < len; i++) {
     let key = sessionStorage.key(i);

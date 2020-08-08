@@ -1,4 +1,3 @@
-// Perform checkout procedure
 function checkout() {
   items = getCartItems();
   checkoutRequest(items);
@@ -6,7 +5,6 @@ function checkout() {
   location.reload();
 }
 
-// Return an array of items from storage
 function getCartItems() {
   let items = []
   if (sessionStorage.length > 0) {
@@ -23,10 +21,9 @@ function getCartItems() {
   return items;
 }
 
-// Send items as a post request
 function checkoutRequest(items) {
   const request = new XMLHttpRequest();
-  request.open('POST', '/checkout', true);
+  request.open('POST', '/checkout', false);
   request.setRequestHeader("Content-Type", "application/json");
   request.onreadystatechange = function() {
     if (request.readyState === 4 && request.status === 200) {
@@ -38,7 +35,6 @@ function checkoutRequest(items) {
   request.send(data);
 }
 
-// Clear session storage
 function clearCart() {
   sessionStorage.clear();
 }
