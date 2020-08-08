@@ -1,15 +1,17 @@
 # Coffee-Shop-Website
 This project implements a coffee shop website. Users can log in, sign up and order items from the shop. Popular drinks are displayed on the homepage.
+![Home page](screenshots/home.png)
 
 ## Built With
 * CSS, HTML, JavaScript, Bootstrap 4
 * Node, Express, MongoDB, Mongoose
 
 ## Screenshots
-![Home page](screenshots/home.png)
-![Stores page](screenshots/stores.png)
-![Shop page](screenshots/shop.png)
-![Cart page](screenshots/cart.png)
+<div style="display: grid; grid-template-columns: 1fr 1fr;">
+  <img src="./screenshots/stores.png" alt="Stores page">
+  <img src="./screenshots/shop.png" alt="Shop page">
+  <img src="./screenshots/stores.png" alt="Stores page">
+</div>
 
 ## How to modify:
 In the constants.js file, add links to the images.
