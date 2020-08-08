@@ -34,5 +34,5 @@ npm install
 ```
 7. While database server is running and in project directory execute the following:
 ```
-node app.js
+node server.js
 ```
