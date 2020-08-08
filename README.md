@@ -7,10 +7,12 @@ This project implements a coffee shop website. Users can log in, sign up and ord
 * Node, Express, MongoDB, Mongoose
 
 ## Screenshots
-<div style="display: grid; grid-template-columns: 1fr 1fr;">
-  <img src="./screenshots/stores.png" alt="Stores page">
-  <img src="./screenshots/shop.png" alt="Shop page">
-  <img src="./screenshots/stores.png" alt="Stores page">
+<div>
+  <img src="./screenshots/stores.png" alt="Stores page" style="width: 50%;">
+  <img src="./screenshots/shop.png" alt="Shop page" style="width: 50%;">
+</div>
+<div>
+  <img src="./screenshots/stores.png" alt="Stores page" style="width: 50%;">
 </div>
 
 ## How to modify:
