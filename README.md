@@ -10,8 +10,8 @@ This project implements a coffee shop website. Users can log in, sign up and ord
   <img src="./screenshots/home.png" alt="Home page" width="400" height="400">
   <img src="./screenshots/stores.png" alt="Stores page" width="400" height="400">
   <hr />
-  <img src="./screenshots/shop.png" alt="Shop page" width=425" height="400">
-  <img src="./screenshots/cart.png" alt="Cart page" width="375" height="400">
+  <img src="./screenshots/shop.png" alt="Shop page" width=400" height="400">
+  <img src="./screenshots/cart.png" alt="Cart page" width="400" height="400">
 </div>
 
 ## How to modify:
